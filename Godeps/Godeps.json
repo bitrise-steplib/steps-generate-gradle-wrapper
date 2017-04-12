@@ -1,0 +1,94 @@
+{
+	"ImportPath": "github.com/bitrise-steplib/steps-generate-gradle-wrapper",
+	"GoVersion": "go1.8",
+	"GodepVersion": "v79",
+	"Packages": [
+		"./..."
+	],
+	"Deps": [
+		{
+			"ImportPath": "github.com/bitrise-core/bitrise-init/models",
+			"Comment": "1.1.3-7-g29363cd",
+			"Rev": "29363cd29dcdcfad0ed9c08fb582a8c10c8eb4f6"
+		},
+		{
+			"ImportPath": "github.com/bitrise-core/bitrise-init/scanners/android",
+			"Comment": "1.1.3-7-g29363cd",
+			"Rev": "29363cd29dcdcfad0ed9c08fb582a8c10c8eb4f6"
+		},
+		{
+			"ImportPath": "github.com/bitrise-core/bitrise-init/steps",
+			"Comment": "1.1.3-7-g29363cd",
+			"Rev": "29363cd29dcdcfad0ed9c08fb582a8c10c8eb4f6"
+		},
+		{
+			"ImportPath": "github.com/bitrise-core/bitrise-init/utility",
+			"Comment": "1.1.3-7-g29363cd",
+			"Rev": "29363cd29dcdcfad0ed9c08fb582a8c10c8eb4f6"
+		},
+		{
+			"ImportPath": "github.com/bitrise-io/bitrise/models",
+			"Comment": "1.5.5-1-g2fa6ef4",
+			"Rev": "2fa6ef4c0185acd0914a9a571b1f46bc729a51fa"
+		},
+		{
+			"ImportPath": "github.com/bitrise-io/envman/models",
+			"Comment": "1.1.3",
+			"Rev": "4b4be054a126fe6b1f26caddd8ef75fe58c30970"
+		},
+		{
+			"ImportPath": "github.com/bitrise-io/go-utils/colorstring",
+			"Rev": "c41abd20981e439d0b92bd1626934be9f3cdf3cf"
+		},
+		{
+			"ImportPath": "github.com/bitrise-io/go-utils/command",
+			"Rev": "c41abd20981e439d0b92bd1626934be9f3cdf3cf"
+		},
+		{
+			"ImportPath": "github.com/bitrise-io/go-utils/errorutil",
+			"Rev": "c41abd20981e439d0b92bd1626934be9f3cdf3cf"
+		},
+		{
+			"ImportPath": "github.com/bitrise-io/go-utils/fileutil",
+			"Rev": "c41abd20981e439d0b92bd1626934be9f3cdf3cf"
+		},
+		{
+			"ImportPath": "github.com/bitrise-io/go-utils/log",
+			"Rev": "c41abd20981e439d0b92bd1626934be9f3cdf3cf"
+		},
+		{
+			"ImportPath": "github.com/bitrise-io/go-utils/parseutil",
+			"Rev": "c41abd20981e439d0b92bd1626934be9f3cdf3cf"
+		},
+		{
+			"ImportPath": "github.com/bitrise-io/go-utils/pathutil",
+			"Rev": "c41abd20981e439d0b92bd1626934be9f3cdf3cf"
+		},
+		{
+			"ImportPath": "github.com/bitrise-io/go-utils/pointers",
+			"Rev": "c41abd20981e439d0b92bd1626934be9f3cdf3cf"
+		},
+		{
+			"ImportPath": "github.com/bitrise-io/stepman/models",
+			"Comment": "0.9.29",
+			"Rev": "86726daabc8fa46ad8116c7ecdf6349de1b4144a"
+		},
+		{
+			"ImportPath": "github.com/bitrise-tools/go-android/sdk",
+			"Rev": "40b7f7acdc96150264f345362e3ea5957f8fdd00"
+		},
+		{
+			"ImportPath": "github.com/bitrise-tools/go-xcode/xcodeproj",
+			"Rev": "2dfa286d87ca7ef6e52f871de262de29e7129845"
+		},
+		{
+			"ImportPath": "github.com/ryanuber/go-glob",
+			"Comment": "v0.1-4-g256dc44",
+			"Rev": "256dc444b735e061061cf46c809487313d5b0065"
+		},
+		{
+			"ImportPath": "gopkg.in/yaml.v2",
+			"Rev": "a3f3340b5840cee44f372bddb5880fcbc419b46a"
+		}
+	]
+}
