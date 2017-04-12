@@ -34,7 +34,7 @@ inputs:
       summary: ""
       description: |-
         Root directory of the project.
-        is_required: true
+      is_required: true
   - gradle_version: "2.14.1"
     opts:
       title: Gradle version to use to generate the wrapper.
