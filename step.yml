@@ -28,13 +28,12 @@ toolkit:
   go:
     package_name: github.com/bitrise-steplib/steps-generate-gradle-wrapper
 inputs:
-  - work_dir: $BITRISE_SOURCE_DIR
+  - project_root_dir: $BITRISE_SOURCE_DIR
     opts:
-      title: "Working directory"
+      title: "Project root directory"
       summary: ""
       description: |-
-        Working directory of the step.
-        You can leave it empty to don't change it.
+        Root directory of the project.
         is_required: true
   - gradle_version: "2.14.1"
     opts:

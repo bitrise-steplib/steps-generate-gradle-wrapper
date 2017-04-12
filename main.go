@@ -35,33 +35,33 @@ var licenseMap = map[string]string{
 
 // ConfigsModel ...
 type ConfigsModel struct {
-	WorkingDirectory string
-	GradleVersion    string
-	AndroidHome      string
+	ProjectRootDir string
+	GradleVersion  string
+	AndroidHome    string
 }
 
 func createConfigsModelFromEnvs() ConfigsModel {
 	return ConfigsModel{
-		WorkingDirectory: os.Getenv("work_dir"),
-		GradleVersion:    os.Getenv("gradle_version"),
-		AndroidHome:      os.Getenv("android_home"),
+		ProjectRootDir: os.Getenv("project_root_dir"),
+		GradleVersion:  os.Getenv("gradle_version"),
+		AndroidHome:    os.Getenv("android_home"),
 	}
 }
 
 func (configs ConfigsModel) print() {
 	log.Infof("Configs:")
-	log.Printf("- WorkingDirectory: %s", configs.WorkingDirectory)
+	log.Printf("- ProjectRootDir: %s", configs.ProjectRootDir)
 	log.Printf("- GradleVersion: %s", configs.GradleVersion)
 	log.Printf("- AndroidHome: %s", configs.AndroidHome)
 }
 
 func (configs ConfigsModel) validate() error {
-	if configs.WorkingDirectory == "" {
-		return errors.New("no WorkingDirectory parameter specified")
-	} else if exist, err := pathutil.IsPathExists(configs.WorkingDirectory); err != nil {
-		return fmt.Errorf("failed to check if WorkingDirectory (%s) exists, error: %s", configs.WorkingDirectory, err)
+	if configs.ProjectRootDir == "" {
+		return errors.New("no ProjectRootDir parameter specified")
+	} else if exist, err := pathutil.IsPathExists(configs.ProjectRootDir); err != nil {
+		return fmt.Errorf("failed to check if ProjectRootDir (%s) exists, error: %s", configs.ProjectRootDir, err)
 	} else if !exist {
-		return fmt.Errorf("WorkingDirectory (%s) not exists", configs.WorkingDirectory)
+		return fmt.Errorf("ProjectRootDir (%s) not exists", configs.ProjectRootDir)
 	}
 
 	if configs.GradleVersion == "" {
@@ -163,9 +163,9 @@ func main() {
 	fmt.Println()
 	log.Infof("Search for root build.gradle file")
 
-	fileList, err := utility.ListPathInDirSortedByComponents(configs.WorkingDirectory, false)
+	fileList, err := utility.ListPathInDirSortedByComponents(configs.ProjectRootDir, false)
 	if err != nil {
-		failf("Failed to search for files in (%s), error: %s", configs.WorkingDirectory, err)
+		failf("Failed to search for files in (%s), error: %s", configs.ProjectRootDir, err)
 	}
 
 	rootBuildGradleFiles, err := android.FilterRootBuildGradleFiles(fileList)
