@@ -31,11 +31,6 @@ inputs:
       title: Gradle version to use to generate the wrapper.
       summary: Gradle version to use to generate the wrapper.
       is_required: true
-  - android_home: $ANDROID_HOME
-    opts:
-      title: Android sdk path
-      description: Android sdk path
-      is_required: true
 outputs:
   - GRADLEW_PATH:
     opts:
