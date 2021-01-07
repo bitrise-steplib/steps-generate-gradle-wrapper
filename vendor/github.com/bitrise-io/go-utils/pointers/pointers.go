@@ -30,6 +30,23 @@ func NewIntPtr(val int) *int {
 	return ptrValue
 }
 
+// NewInt64Ptr ...
+func NewInt64Ptr(val int64) *int64 {
+	ptrValue := new(int64)
+	*ptrValue = val
+	return ptrValue
+}
+
+// NewMapStringInterfacePtr ...
+func NewMapStringInterfacePtr(val map[string]interface{}) *map[string]interface{} {
+	ptrValue := new(map[string]interface{})
+	*ptrValue = map[string]interface{}{}
+	for key, value := range val {
+		(*ptrValue)[key] = value
+	}
+	return ptrValue
+}
+
 // ------------------------------------------------------
 // --- Safe Getters
 

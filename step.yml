@@ -18,6 +18,11 @@ type_tags:
 is_requires_admin_user: true
 is_always_run: false
 is_skippable: false
+
+toolkit:
+  go:
+    package_name: github.com/bitrise-steplib/steps-generate-gradle-wrapper
+
 inputs:
   - project_root_dir: $BITRISE_SOURCE_DIR
     opts:
@@ -31,6 +36,7 @@ inputs:
       title: Gradle version to use to generate the wrapper.
       summary: Gradle version to use to generate the wrapper.
       is_required: true
+      
 outputs:
   - GRADLEW_PATH:
     opts:
