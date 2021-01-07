@@ -5,6 +5,8 @@ app:
   envs:
   - RELEASE_VERSION: 0.9.2
   - SAMPLE_APP_URL: https://github.com/bitrise-samples/android-sdk22-no-gradlew.git
+  - SIMPLE_REPO_GIT_CLONE_URL: https://github.com/bitrise-io/android-multiple-test-results-sample.git
+  - SIMPLE_REPO_BRANCH: maintenance
 
 workflows:
   ci:
@@ -25,17 +27,21 @@ workflows:
         inputs:
         - path: ./_tmp
         - is_create_path: true
-    - git-clone:
-        title: Git clone sample app
-        run_if: true
+    - script:
         inputs:
-        - repository_url: $SAMPLE_APP_URL
-        - clone_into_dir: ./
-        - commit: ""
-        - tag: ""
-        - branch: "master"
-        - pull_request_id: ""
-        - clone_depth: ""
+        - content: |-
+            git clone $SIMPLE_REPO_GIT_CLONE_URL -b $SIMPLE_REPO_BRANCH .
+    # - git-clone:
+    #     title: Git clone sample app
+    #     run_if: true
+    #     inputs:
+    #     - repository_url: $SAMPLE_APP_URL
+    #     - clone_into_dir: ./
+    #     - commit: ""
+    #     - tag: ""
+    #     - branch: "master"
+    #     - pull_request_id: ""
+    #     - clone_depth: ""
     - path::./:
         title: Step Test
         run_if: true
@@ -56,7 +62,7 @@ workflows:
         title: Switch working dir to _tmp
         run_if: true
         inputs:
-        - path: /Users/bitrise/Develop/sample-apps-cordova/platforms/android
+        - path: ./_tmp
         - is_create_path: true
     - path::./:
         title: Step Test
