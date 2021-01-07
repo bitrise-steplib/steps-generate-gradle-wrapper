@@ -18,15 +18,11 @@ type_tags:
 is_requires_admin_user: true
 is_always_run: false
 is_skippable: false
-deps:
-  brew:
-  - name: go
-  apt_get:
-  - name: golang
-    bin_name: go
+
 toolkit:
   go:
     package_name: github.com/bitrise-steplib/steps-generate-gradle-wrapper
+
 inputs:
   - project_root_dir: $BITRISE_SOURCE_DIR
     opts:
@@ -35,16 +31,12 @@ inputs:
       description: |-
         Root directory of the project.
       is_required: true
-  - gradle_version: "2.14.1"
+  - gradle_version: "6.1.1"
     opts:
       title: Gradle version to use to generate the wrapper.
       summary: Gradle version to use to generate the wrapper.
       is_required: true
-  - android_home: $ANDROID_HOME
-    opts:
-      title: Android sdk path
-      description: Android sdk path
-      is_required: true
+      
 outputs:
   - GRADLEW_PATH:
     opts:
