@@ -39,13 +39,13 @@ func main() {
 
 	gradleCommand := command.New("gradle", "wrapper", "--gradle-version", config.GradleVersion)
 	gradleCommand.SetDir(config.ProjectRootDir)
-	if err := gradleCommand.Run(); err != nil {
-		failf("Gradle command failed, error: %v", err)
+	if out, err := gradleCommand.RunAndReturnTrimmedCombinedOutput(); err != nil {
+		failf("%s failed with error %v: %s", gradleCommand.PrintableCommandArgs(), err, out)
 	}
 
 	gradlewPath := filepath.Join(config.ProjectRootDir, "gradlew")
-	_, err := pathutil.IsPathExists(gradlewPath)
-	if err != nil {
+	exists, err := pathutil.IsPathExists(gradlewPath)
+	if !exists || err != nil {
 		failf("Gradle command passed but cannot find generated gradlew file, error: %v", err)
 	}
 
