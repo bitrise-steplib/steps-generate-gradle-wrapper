@@ -56,7 +56,7 @@ workflows:
         title: Switch working dir to _tmp
         run_if: true
         inputs:
-        - path: ./_tmp
+        - path: /Users/bitrise/Develop/sample-apps-cordova/platforms/android
         - is_create_path: true
     - path::./:
         title: Step Test
