@@ -9,10 +9,13 @@ source_code_url: https://github.com/bitrise-steplib/steps-generate-gradle-wrappe
 support_url: https://github.com/bitrise-steplib/steps-generate-gradle-wrapper/issues
 project_type_tags:
   - android
-  - xamarin
-  - react-native
   - cordova
+  - flutter
   - ionic
+  - java
+  - kotlin-multiplatform
+  - react-native
+
 type_tags:
   - utility
 is_requires_admin_user: true
