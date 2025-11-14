@@ -2,19 +2,22 @@ title: Generate Gradle Wrapper
 summary: Generates Gradle Wrapper if it doesn't already exist
 description: |-
   Generates Gradle Wrapper if it doesn't already exist.
-  
+
   The gradlew file will be generated into the same directory where your root build.gradle file exists.
 website: https://github.com/bitrise-steplib/steps-generate-gradle-wrapper
 source_code_url: https://github.com/bitrise-steplib/steps-generate-gradle-wrapper
 support_url: https://github.com/bitrise-steplib/steps-generate-gradle-wrapper/issues
 project_type_tags:
-  - android
-  - xamarin
-  - react-native
-  - cordova
-  - ionic
+- android
+- cordova
+- flutter
+- ionic
+- java
+- kotlin-multiplatform
+- react-native
+
 type_tags:
-  - utility
+- utility
 is_requires_admin_user: true
 is_always_run: false
 is_skippable: false
@@ -24,21 +27,20 @@ toolkit:
     package_name: github.com/bitrise-steplib/steps-generate-gradle-wrapper
 
 inputs:
-  - project_root_dir: $BITRISE_SOURCE_DIR
-    opts:
-      title: "Project root directory"
-      summary: ""
-      description: |-
-        Root directory of the project.
-      is_required: true
-  - gradle_version: "6.1.1"
-    opts:
-      title: Gradle version to use to generate the wrapper.
-      summary: Gradle version to use to generate the wrapper.
-      is_required: true
-      
+- project_root_dir: $BITRISE_SOURCE_DIR
+  opts:
+    title: Project root directory
+    description: |-
+      Root directory of the project.
+    is_required: true
+- gradle_version: 6.1.1
+  opts:
+    title: Gradle version to use to generate the wrapper.
+    summary: Gradle version to use to generate the wrapper.
+    is_required: true
+
 outputs:
-  - GRADLEW_PATH:
-    opts:
-      title: Gradle Wrapper file path
-      summary: The generated Gradle Wrapper file path.
+- GRADLEW_PATH:
+  opts:
+    title: Gradle Wrapper file path
+    summary: The generated Gradle Wrapper file path.
